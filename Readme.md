@@ -43,7 +43,7 @@ class MyComponent extends React.Component {
     alert(this.refs.age.value());
   }
 
-  render() {
+  render () {
     return (
       <View style={{ flex: 1 }}>
         <InputTextItem
