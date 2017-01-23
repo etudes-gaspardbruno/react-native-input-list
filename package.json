@@ -1,0 +1,15 @@
+{
+  "name": "react-native-input-list",
+  "version": "1.0.0",
+  "description": "A Input components library for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gaspard+Bruno <etudes-gaspardbruno@github.com>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "~15.4.0-rc.4",
+    "react-native": "^0.39.0"
+  }
+}
