@@ -1,6 +1,6 @@
 {
   "name": "react-native-input-list",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Input components library for React Native",
   "main": "index.js",
   "scripts": {
