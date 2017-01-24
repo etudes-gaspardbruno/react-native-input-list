@@ -5,6 +5,7 @@ A React Native library with components for Input Lists (like forms).
 ## Components
 
 * InputTextItem - Text/Numeric input field
+* InputSwitch - Switch input field
 
 ## Install
 
@@ -15,7 +16,8 @@ npm install --save react-native-input-list
 ## Usage
 
 ```js
-import React, { View } from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
 
 import { InputTextItem } from 'react-native-input-list';
 

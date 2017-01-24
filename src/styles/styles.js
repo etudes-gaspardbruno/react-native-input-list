@@ -1,11 +1,5 @@
 import { StyleSheet } from 'react-native';
-
-const variables = {
-  gray: '#AAAAAA',
-  lightestGray: '#FAFAFA',
-  red: '#D21A09',
-  font: 'AvenirNext-Regular'
-};
+import * as variables from './variables';
 
 export default StyleSheet.create({
   formContainer: {
