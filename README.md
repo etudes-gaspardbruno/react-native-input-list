@@ -2,7 +2,7 @@
 
 A React Native library with input components.
 
-![alt text](http://i.imgur.com/H3fMQ43.png =250x)
+![alt text](http://i.imgur.com/H3fMQ43.png)
 
 ## Components
 
