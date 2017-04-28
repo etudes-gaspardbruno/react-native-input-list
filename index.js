@@ -1,2 +1,1 @@
-export { default as InputTextItem } from './src/InputTextItem';
-export { default as InputSwitch } from './src/InputSwitch';
+export { default as InputText } from './src/InputText';
