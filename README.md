@@ -3,7 +3,7 @@
 A React Native library with input components.
 
 <p align="center">
-  <img src="http://i.imgur.com/shgdu4N.png"/>
+  <img src="http://i.imgur.com/IEnYqWl.png"/>
 </p>
 
 ## Components
