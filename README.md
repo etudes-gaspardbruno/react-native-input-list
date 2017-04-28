@@ -2,9 +2,9 @@
 
 A React Native library with input components.
 
-![alt text](http://i.imgur.com/shgdu4N.png)
-
-<img src="http://i.imgur.com/shgdu4N.png" style="display:block;margin: 0 auto;">
+<p align="center">
+  <img src="http://i.imgur.com/shgdu4N.png"/>
+</p>
 
 ## Components
 
