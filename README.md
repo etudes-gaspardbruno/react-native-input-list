@@ -4,6 +4,8 @@ A React Native library with input components.
 
 ![alt text](http://i.imgur.com/shgdu4N.png)
 
+<img src="http://i.imgur.com/shgdu4N.png">
+
 ## Components
 
 * InputText - Text/Numeric input field
