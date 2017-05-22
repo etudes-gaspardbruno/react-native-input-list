@@ -9,6 +9,7 @@ A React Native library with input components.
 ## Components
 
 * InputText - Text/Numeric input field
+* InputCountrySelector - Country selector input field
 
 ## Install
 
@@ -29,8 +30,10 @@ export default class App extends Component {
     const firstValue = `First input: ${this.refs.firstInput.value()}\n`;
     const secondValue = `Second input: ${this.refs.secondInput.value()}\n`;
     const thirdValue = `Third input: ${this.refs.thirdInput.value()}\n`;
+    const fourthValue = `Fourth input: ${this.refs.fourthInput.value()}\n`;
+    const fifthValue = `Fifth input: ${this.refs.fifthInput.value()}\n`;
 
-    const text = firstValue + secondValue + thirdValue;
+    const text = firstValue + secondValue + thirdValue + fourthValue + fifthValue;
 
     Alert.alert(
       'Values',
@@ -42,8 +45,10 @@ export default class App extends Component {
     const firstValid = `First input: ${!!this.refs.firstInput.valid()}\n`;
     const secondValid = `Second input: ${!!this.refs.secondInput.valid()}\n`;
     const thirdValid = `Third input: ${!!this.refs.thirdInput.valid()}\n`;
+    const fourthValid = `Fourth input: ${!!this.refs.fourthInput.valid()}\n`;
+    const fifthValid = `Fifth input: ${!!this.refs.fifthInput.valid()}\n`;
 
-    const text = firstValid + secondValid + thirdValid;
+    const text = firstValid + secondValid + thirdValid + fourthValid + fifthValid;
 
     Alert.alert(
       'Valid?',
@@ -55,6 +60,8 @@ export default class App extends Component {
     this.refs.firstInput.showError();
     this.refs.secondInput.showError();
     this.refs.thirdInput.showError();
+    this.refs.fourthInput.showError();
+    this.refs.fifthInput.showError();
   }
 
   render() {
@@ -66,6 +73,7 @@ export default class App extends Component {
           <InputText ref="secondInput" label="Without label"/>
           <InputText ref="thirdInput" keyboardType="numeric" label="Numeric"/>
           <InputText ref="fourthInput" type="withLabel" label="With styles" containerStyles={styles.inputStyles}/>
+          <InputCountrySelector ref="fifthInput" label="Select your country" />
         </View>
         <View>
           <TouchableOpacity onPress={this.showValues}>
