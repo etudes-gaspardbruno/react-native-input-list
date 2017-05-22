@@ -1,8 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import * as variables from './variables';
+
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   formContainer: {
+    height: 52,
     backgroundColor: 'white',
     borderBottomWidth: 2,
     paddingHorizontal: 20,
@@ -30,5 +34,23 @@ export default StyleSheet.create({
   },
   error: {
     color: variables.red
+  },
+  formValueContainer: {
+    height: 18,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  formValue: {
+    height: 18,
+    lineHeight: 20,
+    fontSize: 16,
+    fontFamily: variables.font,
+  },
+  formValuePlaceholder: {
+    color: variables.gray
+  },
+  countryPicker: {
+    top: height
   }
 });
