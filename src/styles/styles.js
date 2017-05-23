@@ -52,5 +52,17 @@ export default StyleSheet.create({
   },
   countryPicker: {
     top: height
+  },
+  formSwitchLabel: {
+    color: 'black',
+    height: 18,
+    lineHeight: 20,
+    fontSize: 16,
+    fontFamily: variables.font,
+  },
+  switchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 });
