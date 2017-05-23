@@ -10,6 +10,7 @@ A React Native library with input components.
 
 * InputText - Text/Numeric input field
 * InputCountrySelector - Country selector input field
+* InputSwitch - Switch input field
 
 ## Install
 
@@ -22,7 +23,7 @@ npm install --save react-native-input-list
 ```js
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
-import { InputText } from 'react-native-input-list';
+import { InputText, InputCountrySelector, InputSwitch } from 'react-native-input-list';
 
 export default class App extends Component {
 
@@ -32,8 +33,9 @@ export default class App extends Component {
     const thirdValue = `Third input: ${this.refs.thirdInput.value()}\n`;
     const fourthValue = `Fourth input: ${this.refs.fourthInput.value()}\n`;
     const fifthValue = `Fifth input: ${this.refs.fifthInput.value()}\n`;
+    const sixthValue = `Sixth input: ${this.refs.sixthInput.value()}\n`;
 
-    const text = firstValue + secondValue + thirdValue + fourthValue + fifthValue;
+    const text = firstValue + secondValue + thirdValue + fourthValue + fifthValue + sixthValue;
 
     Alert.alert(
       'Values',
@@ -63,6 +65,10 @@ export default class App extends Component {
     this.refs.fourthInput.showError();
     this.refs.fifthInput.showError();
   }
+  
+  switchChanged = (value) => {
+    alert(value);
+  }
 
   render() {
     return (
@@ -74,6 +80,7 @@ export default class App extends Component {
           <InputText ref="thirdInput" keyboardType="numeric" label="Numeric"/>
           <InputText ref="fourthInput" type="withLabel" label="With styles" containerStyles={styles.inputStyles}/>
           <InputCountrySelector ref="fifthInput" label="Select your country" />
+          <InputSwitch ref="sixthInput" defaultValue={false} onChange={this.switchChanged} label="Are you alive?"/>
         </View>
         <View>
           <TouchableOpacity onPress={this.showValues}>
