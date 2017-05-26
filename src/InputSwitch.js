@@ -1,8 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import { Text, Switch, View } from 'react-native';
 
-import styles from './styles/styles';
-import * as variables from './styles/variables';
+import generateStyles from './styles/styles';
+import defaultVariables from './styles/variables';
+
+let styles, variables;
 
 export default class InputSwitch extends Component {
 
@@ -22,12 +24,17 @@ export default class InputSwitch extends Component {
     onChange: PropTypes.func
   }
 
-  static defaultProps = {
-    tintColor: variables.yellow
-  }
+  constructor(props) {
+    variables = Object.assign({}, defaultVariables, props.styleVariables);
+    styles = generateStyles(variables);
 
-  state = {
-    value: this.props.defaultValue || false
+    props.tintColor = props.tintColor || variables.yellow;
+
+    super(props);
+
+    this.state = {
+      value: this.props.defaultValue || false
+    }
   }
 
   value() {

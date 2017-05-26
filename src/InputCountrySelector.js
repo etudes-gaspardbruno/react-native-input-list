@@ -6,8 +6,10 @@ import {
 } from 'react-native';
 import CountryPicker from 'react-native-country-picker-modal';
 
-import styles from './styles/styles';
-import * as variables from './styles/variables';
+import generateStyles from './styles/styles';
+import defaultVariables from './styles/variables';
+
+let styles, variables;
 
 export default class InputCountrySelector extends Component {
 
@@ -31,13 +33,18 @@ export default class InputCountrySelector extends Component {
     errorColor: PropTypes.string,
   }
 
-  static defaultProps = {
-    errorColor: variables.red,
-  }
+  constructor(props) {
+    variables = Object.assign({}, defaultVariables, props.styleVariables);
+    styles = generateStyles(variables);
 
-  state = {
-    value: this.props.defaultValue || '',
-    error: false
+    props.errorColor = props.errorColor || variables.red;
+
+    super(props);
+
+    this.state = {
+      value: this.props.defaultValue || '',
+      error: false
+    }
   }
 
   value() {

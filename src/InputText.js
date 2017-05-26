@@ -6,8 +6,10 @@ import {
   View
 } from 'react-native';
 
-import styles from './styles/styles';
-import * as variables from './styles/variables';
+import generateStyles from './styles/styles';
+import defaultVariables from './styles/variables';
+
+let styles, variables;
 
 export default class InputText extends Component {
 
@@ -30,14 +32,19 @@ export default class InputText extends Component {
     placeholderColor: PropTypes.string
   }
 
-  static defaultProps = {
-    errorColor: variables.red,
-    placeholderColor: variables.gray
-  }
+  constructor(props) {
+    variables = Object.assign({}, defaultVariables, props.styleVariables);
+    styles = generateStyles(variables);
 
-  state = {
-    value: this.props.defaultValue || '',
-    error: false
+    props.errorColor = props.errorColor || variables.red;
+    props.placeholderColor = props.placeholderColor || variables.gray;
+
+    super(props);
+
+    this.state = {
+      value: this.props.defaultValue || '',
+      error: false
+    }
   }
 
   value() {
