@@ -4,7 +4,6 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 export default function generateStyles(variables) {
-  console.log('GENERATING');
   return StyleSheet.create({
     formContainer: {
       height: 52,
@@ -52,7 +51,7 @@ export default function generateStyles(variables) {
       color: variables.gray
     },
     countryPicker: {
-      top: height
+      top: -height
     },
     formSwitchLabel: {
       color: 'black',
