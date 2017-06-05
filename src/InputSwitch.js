@@ -28,12 +28,11 @@ export default class InputSwitch extends Component {
     variables = Object.assign({}, defaultVariables, props.styleVariables);
     styles = generateStyles(variables);
 
-    props.tintColor = props.tintColor || variables.yellow;
-
     super(props);
 
     this.state = {
-      value: this.props.defaultValue || false
+      value: this.props.defaultValue || false,
+      tintColor: props.tintColor || variables.yellow
     }
   }
 
@@ -60,9 +59,9 @@ export default class InputSwitch extends Component {
   }
 
   render() {
-    const { label, containerStyles, labelContainerStyles, labelStyles, tintColor,
+    const { label, containerStyles, labelContainerStyles, labelStyles,
       switchContainerStyles } = this.props;
-    const { value } = this.state;
+    const { value, tintColor } = this.state;
 
     const containerStyle = [styles.formContainer, containerStyles];
     const labelContainerStyle = [styles.formLabelContainer, labelContainerStyles];

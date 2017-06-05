@@ -37,13 +37,12 @@ export default class InputCountrySelector extends Component {
     variables = Object.assign({}, defaultVariables, props.styleVariables);
     styles = generateStyles(variables);
 
-    props.errorColor = props.errorColor || variables.red;
-
     super(props);
 
     this.state = {
       value: this.props.defaultValue || '',
-      error: false
+      error: false,
+      errorColor: props.errorColor || variables.red
     }
   }
 
@@ -73,9 +72,9 @@ export default class InputCountrySelector extends Component {
 
   render() {
     const { label, required, type, containerStyles, labelContainerStyles,
-      labelStyles, valueContainerStyles, placeholderStyles, valueStyles, errorColor,
+      labelStyles, valueContainerStyles, placeholderStyles, valueStyles,
       placeholderColor } = this.props;
-    const { value, error } = this.state;
+    const { value, error, errorColor } = this.state;
 
     const labelText = required ? `${label} *` : label;
     const placeholder = type === 'withLabel' ? '' : label;

@@ -36,14 +36,13 @@ export default class InputText extends Component {
     variables = Object.assign({}, defaultVariables, props.styleVariables);
     styles = generateStyles(variables);
 
-    props.errorColor = props.errorColor || variables.red;
-    props.placeholderColor = props.placeholderColor || variables.gray;
-
     super(props);
 
     this.state = {
       value: this.props.defaultValue || '',
-      error: false
+      error: false,
+      errorColor: props.errorColor || variables.red,
+      placeholderColor: props.placeholderColor || variables.gray
     }
   }
 
@@ -89,8 +88,8 @@ export default class InputText extends Component {
 
   render() {
     const { label, keyboardType, required, type, containerStyles, labelContainerStyles,
-      labelStyles, inputStyles, errorColor, placeholderColor } = this.props;
-    const { value, error } = this.state;
+      labelStyles, inputStyles } = this.props;
+    const { value, error, errorColor, placeholderColor } = this.state;
 
     const labelText = required ? `${label} *` : label;
     const placeholder = type === 'withLabel' ? '' : label;

@@ -51,7 +51,8 @@ export default function generateStyles(variables) {
       color: variables.gray
     },
     countryPicker: {
-      top: -height
+      top: -height,
+      opacity: 0
     },
     formSwitchLabel: {
       color: 'black',
