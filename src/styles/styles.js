@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -10,7 +10,7 @@ export default function generateStyles(variables) {
       backgroundColor: 'white',
       borderBottomWidth: 2,
       paddingHorizontal: 20,
-      paddingVertical: 16,
+      paddingVertical: Platform.OS === 'ios' ? 16 : 0,
       borderBottomColor: variables.lightestGray,
       flexDirection: 'row',
       justifyContent: 'space-between'
@@ -26,7 +26,8 @@ export default function generateStyles(variables) {
     },
     formInput: {
       flex: 2,
-      height: 18,
+      height: Platform.OS === 'ios' ? 18 : 50,
+      paddingBottom: Platform.OS === 'ios' ? 0 : 10,
       fontSize: 16,
       fontFamily: variables.font,
       textAlign: 'left',
@@ -49,6 +50,9 @@ export default function generateStyles(variables) {
     },
     formValuePlaceholder: {
       color: variables.gray
+    },
+    countrySelectorContainer: {
+      paddingVertical: 16,
     },
     countryPicker: {
       top: -height,

@@ -80,7 +80,7 @@ export default class InputCountrySelector extends Component {
     const placeholder = type === 'withLabel' ? '' : label;
     const valueText = value || placeholder;
 
-    const containerStyle = [styles.formContainer, containerStyles];
+    const containerStyle = [styles.formContainer, styles.countrySelectorContainer, containerStyles];
 
     const labelContainerStyle = [styles.formLabelContainer, labelContainerStyles];
     const labelStyle = error ? [styles.formLabel, labelStyles, styles.error] : [styles.formLabel, labelStyles];
