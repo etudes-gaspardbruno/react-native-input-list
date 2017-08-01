@@ -13,7 +13,7 @@
     "url": "git+https://github.com/etudes-gaspardbruno/react-native-input-list.git"
   },
   "dependencies": {
-    "react-native-country-picker-modal": "^0.3.0-rc1"
+    "react-native-country-picker-modal": "https://github.com/BunnyBearXYZ/react-native-country-picker-modal/tarball/master"
   },
   "peerDependencies": {
     "react": ">=15.4.0",
