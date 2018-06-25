@@ -19,6 +19,7 @@ export default class InputCountrySelector extends Component {
     required: PropTypes.bool,
     type: PropTypes.string,
     keyboardType: PropTypes.string,
+    excludeCountries: PropTypes.array,
 
     // Label & placeholder
     label: PropTypes.string,
@@ -74,7 +75,7 @@ export default class InputCountrySelector extends Component {
   render() {
     const { label, required, type, containerStyles, labelContainerStyles,
       labelStyles, valueContainerStyles, placeholderStyles, valueStyles,
-      placeholderColor } = this.props;
+      placeholderColor, excludeCountries } = this.props;
     const { value, error, errorColor } = this.state;
 
     const labelText = required ? `${label} *` : label;
@@ -109,7 +110,13 @@ export default class InputCountrySelector extends Component {
         </TouchableWithoutFeedback>
 
         <View style={countryPickerStyle}>
-          <CountryPicker ref="input" cca2="US" onChange={this._updateInput} translation='eng' closeable/>
+          <CountryPicker
+            ref="input"
+            cca2="US"
+            onChange={this._updateInput}
+            translation='eng'
+            closeable
+            excludeCountries={excludeCountries} />
         </View>
       </View>
     );
