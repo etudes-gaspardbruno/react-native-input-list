@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "react-native-country-picker-modal": "^0.6.0",
-    "react-native-stage-0": "^1.0.1"
+    "babel-preset-react-native-stage-0": "^1.0.1"
   },
   "peerDependencies": {
     "react": ">=15.4.0",
