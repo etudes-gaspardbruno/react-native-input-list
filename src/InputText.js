@@ -19,6 +19,7 @@ export default class InputText extends Component {
     required: PropTypes.bool,
     type: PropTypes.string,
     keyboardType: PropTypes.string,
+    password: PropTypes.bool,
 
     // Label & placeholder
     label: PropTypes.string,
@@ -89,17 +90,20 @@ export default class InputText extends Component {
 
   render() {
     const { label, keyboardType, required, type, containerStyles, labelContainerStyles,
-      labelStyles, inputStyles } = this.props;
+      labelStyles, inputStyles, password } = this.props;
     const { value, error, errorColor, placeholderColor } = this.state;
 
     const labelText = required ? `${label} *` : label;
     const placeholder = type === 'withLabel' ? '' : label;
-
+    const secureTextEntry = password ? password : false;
+    
     const containerStyle = [styles.formContainer, containerStyles];
     const labelContainerStyle = [styles.formLabelContainer, labelContainerStyles];
     const labelStyle = error ? [styles.formLabel, labelStyles, styles.error] : [styles.formLabel, labelStyles];
     const inputStyle = [styles.formInput, inputStyles];
     const placeholderTextColor = error ? errorColor : placeholderColor;
+
+
 
     return (
       <View style={containerStyle}>
@@ -122,6 +126,7 @@ export default class InputText extends Component {
           value={value}
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
+          secureTextEntry={secureTextEntry}
           {...this.props}
         />
     </View>
